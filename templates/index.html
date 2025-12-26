@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор комплиментов</title>
+    <!-- Подключаем CSS-файл из папки static -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Основной контейнер -->
+    <div class="container">
+        <h1>Генератор комплиментов</h1>
+        <!-- Блок для комплимента, который будет анимирован -->
+        <div class="compliment">{{ compliment }}</div>
+        <!-- Кнопка для обновления комплимента -->
+        <button onclick="window.location.reload()">Получить комплимент</button>
+    </div>
+</body>
+</html>
