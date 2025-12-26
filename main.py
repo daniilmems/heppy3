@@ -26,5 +26,6 @@ def home():
     return render_template("index.html", compliment=random.choice(compliments))
 
 # Запускаем приложение, если этот файл запущен напрямую
-if __name__ == "__main__":
-    app.run(debug=True)  # debug=True для автоматического перезапуска при изменениях
+if __name__ != "__main__":
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))  # debug=True для автоматического перезапуска при изменениях
